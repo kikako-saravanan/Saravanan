@@ -3,8 +3,9 @@ body {
   margin: 0;
   text-align: center;
   /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif*/
-  font-family: 'Merriweather', serif;
-  color: #40514E;
+  font-family: "Merriweather", serif;
+  color: #40514e;
+  isolation: isolate;
 }
 
 h1 {
@@ -13,26 +14,28 @@ h1 {
 color:#66BFBF
   */
   margin: 50px auto 0 auto;
-  font-family: 'Sacramento', cursive;
+  font-family: "Sacramento", cursive;
   font-size: 5.625rem;
-  color: #957DAD;
-
+  color: #957dad;
+  isolation: isolate;
 }
 
 h2 {
-  font-family: 'Montserrat', Helvetica,Arial,sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
-  color: #957DAD;
+  color: #957dad;
   font-weight: normal;
   padding-bottom: 10px;
+  isolation: isolate;
 }
 
 h3 {
   /*
   color:#11999E
   */
-  font-family: 'Montserrat',Helvetica,Arial, sans-serif;
-  color: #D291BC;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  color: #d291bc;
+  isolation: isolate;
 }
 
 .text {
@@ -45,9 +48,10 @@ p {
 }
 
 .top_container {
-  background-color: #D291BC;
+  background-color: #d291bc;
   position: relative;
   padding-top: 100px;
+  isolation: isolate;
 }
 
 .bottom-cloud {
@@ -64,14 +68,13 @@ p {
 
 .sar {
   width: 17%;
-  border-radius:50%;
+  border-radius: 50%;
 }
 
 .img {
   width: 30%;
   float: right;
   margin-right: 30px;
-
 }
 
 .fullstack {
@@ -80,25 +83,23 @@ p {
   margin-right: 30px;
 }
 
-.java{
+.java {
   width: 30%;
   float: left;
   margin-right: 30px;
-
 }
 
-.dsAlgo{
+.dsAlgo {
   width: 30%;
   float: right;
   margin-right: 30px;
   margin-top: 25px;
 }
 
-.cloud{
+.cloud {
   width: 30%;
   float: left;
   margin-right: 30px;
-
 }
 
 .skill-row {
@@ -108,35 +109,35 @@ p {
 }
 
 hr {
-  border: dotted #D291BC 6px;
+  border: dotted #d291bc 6px;
   width: 4%;
   border-bottom: none;
   margin: 100px auto;
+  isolation: isolate;
 }
 
 .bottom-container {
-  background-color: #D291BC;
+  background-color: #d291bc;
   padding: 50px 0 20px;
+  isolation: isolate;
 }
 
 a {
   margin: 10px 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
 }
 
 a:hover {
-  color: #EAF6F6;
+  color: #eaf6f6;
 }
 
 .middle-container {
   margin: 100px 0;
 }
 
-
-
 .copyright {
-  color: #EAF6F6;
+  color: #eaf6f6;
   font-size: 0.75rem;
   /*75%*/
   padding: 20px 0;
@@ -152,11 +153,12 @@ a:hover {
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #ffffff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  isolation: isolate;
 }
 
 .butn:hover {
@@ -167,4 +169,5 @@ a:hover {
   background-image: -o-linear-gradient(top, #41456e, #365187);
   background-image: linear-gradient(to bottom, #41456e, #365187);
   text-decoration: none;
+  isolation: isolate;
 }
