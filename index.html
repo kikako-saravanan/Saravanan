@@ -1,127 +1,779 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>SARAVANAN</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Saravanan M | Frontend Framework Engineer | React & AI Tools Expert</title>
+  <meta name="title" content="Saravanan M | Frontend Framework Engineer | React & AI Tools Expert">
+  <meta name="description"
+    content="Frontend Framework Engineer specializing in React 18, AI-powered developer tools, and enterprise architecture. Winner of Design to Code Hackathon at Lowe's. Expert in microfrontends, NX monorepo, and CI/CD.">
+  <meta name="keywords"
+    content="frontend engineer, react developer, framework engineer, AI tools, design to code, microfrontends, NX monorepo, CI/CD, Lowe's engineer, technical blogger">
+  <meta name="author" content="Saravanan Mohan">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saravananm.dev/">
+  <meta property="og:title" content="Saravanan M | Frontend Framework Engineer | React & AI Tools Expert">
+  <meta property="og:description"
+    content="Frontend Framework Engineer specializing in React 18, AI-powered developer tools, and enterprise architecture. Winner of Design to Code Hackathon at Lowe's.">
+  <meta property="og:image" content="https://saravananm.dev/images/saravanan.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://saravananm.dev/">
+  <meta property="twitter:title" content="Saravanan M | Frontend Framework Engineer | React & AI Tools Expert">
+  <meta property="twitter:description"
+    content="Frontend Framework Engineer specializing in React 18, AI-powered developer tools, and enterprise architecture.">
+  <meta property="twitter:image" content="https://saravananm.dev/images/saravanan.png">
+  <meta name="twitter:creator" content="@kikako_saro">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://saravananm.dev/">
+
+  <!-- Favicon -->
   <link rel="icon" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Preconnect to external domains for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Font loading with display swap for better performance -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Saravanan Mohan",
+    "url": "https://saravananm.dev",
+    "image": "https://saravananm.dev/images/saravanan.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/saravanan-m/",
+      "https://github.com/kikako-saravanan",
+      "https://mobile.twitter.com/kikako_saro",
+      "https://www.instagram.com/kikako_saravanan/"
+    ],
+    "jobTitle": "Frontend Framework Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Lowe's"
+    },
+    "alumniOf": "Newton School",
+    "knowsAbout": ["React", "Frontend Development", "AI Tools", "Microfrontends", "NX Monorepo", "CI/CD", "JavaScript", "TypeScript"],
+    "description": "Frontend Framework Engineer specializing in React 18, AI-powered developer tools, and enterprise architecture at Lowe's"
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
 
-  <div class="top_container">
-    <img class="top-cloud" src="images\cloud.png" alt="cloud">
-    <h1>I'm Saravanan</h1>
-    <h2>
-      A Full Stack Web Developer.
-    </h2>
-    <img class="bottom-cloud" src="images\cloud.png" alt="cloud">
-    <img src="images\mountain.png" alt="mountain">
-  </div>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" style="position: absolute; left: -9999px;">Skip to main content</a>
 
-  <div class="middle-container">
-    <div class="profile">
-      <br />
-      <img class="sar" src="images\saro.jpg" alt="profile_pic">
-      <h2>Hello.</h2>
-      <div class="text">
-        <p> I'm a programmer and technology enthusiast.💗to meet new people.</p>
-      </div>
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="logo">SM</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" role="button" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <hr>
-    <div class="skills">
-      <h2>My Skill Set's</h2>
+  </nav>
 
-
-      <div class="skill-row">
-        <img class="fullstack" src="images/fullStack.gif" alt="fullStack Developer">
-        <h3>FullStack Web Developer</h3>
-        <p> I can able to work on Front End Technologies like HTML5, CSS3, Typescript, Angular 8, Angular material and Back
-          End Technologies like .net and database like Sql and MongoDB.I follow Agile and DevOps methadologies to deliver Quality and Fast Software.
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-subtitle">Frontend Framework Engineer • AI Tools Pioneer • Continuous Learner</p>
+        <h1 class="hero-title">Saravanan Mohan</h1>
+        <p class="hero-description">
+          Building enterprise-grade internal frameworks and developer tooling that empower engineering teams
+          to ship faster
         </p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-primary">Let's Connect</a>
+          <a href="#skills" class="btn btn-secondary">Explore My Work</a>
+        </div>
       </div>
+    </section>
 
-      <div class="skill-row">
-        <img class="java" src="images/java.png" alt="core Java">
-        <h3>Core Java</h3>
-        <p>I love this language and also have a pretty good knoweldge on Basics, OOPS, Collection framework. </p>
-
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title reveal">About Me</h2>
+      <div class="about-content">
+        <div class="about-image reveal">
+          <img src="images/saravanan.png" alt="Saravanan Mohan - Frontend Framework Engineer" class="profile-img"
+            width="400" height="400" loading="lazy">
+        </div>
+        <article class="about-text reveal">
+          <h3>Hello, I'm Saravanan</h3>
+          <p>
+            A passionate Frontend Framework Engineer and continuous learner who thrives on taking initiative
+            and seeing projects through to completion. I specialize in building enterprise-grade internal
+            frameworks, AI-powered developer tooling, and automation systems. Currently at Lowe's, I
+            architect and maintain scalable React 18-based internal framework using Adapter Based
+            architecture, enabling seamless plugin-based extensibility for engineering teams across the
+            organization.
+          </p>
+          <p>
+            I'm pioneering AI-enhanced developer experiences by building an MCP (Model Context Protocol) for
+            our internal design system and developing a Vibe Coder using Claude and ChatGPT. As the winner
+            of design-to-code hackathon, I led the development of an innovative design-to-code tool that
+            automatically converts Figma designs to React code—revolutionizing how developers and engineers
+            build UIs across the company. I've also presented full-day demos to engineers and business
+            owners, showcasing both the design-to-code tool and our internal framework capabilities.
+          </p>
+          <p>
+            Beyond framework development, I led the organization-wide migration from Jenkins to LOCI (Lowe's
+            CI/CD), our internally created tool, streamlining deployment workflows across teams. I've
+            created comprehensive starter projects that automate the entire developer workflow from Stash
+            creation to deployment, significantly reducing onboarding time. My hackathon participation
+            includes winning first place and securing 7th place in a retail price-matching automation
+            challenge that aimed to reduce manual checkout time for associates.
+          </p>
+          <p>
+            As a curious human being with a growth mindset, I'm deeply committed to giving back to the
+            frontend community through technical blogging, sharing my experience and learnings in
+            comprehensive guides on performance optimization and architecture patterns. As a mentor, I've
+            successfully onboarded junior engineers, senior engineers, and team leads, providing knowledge
+            transfer and ensuring smooth team integration. My diverse background includes early experiences
+            in digital marketing, data analytics, and sales—skills that enhance my ability to understand
+            user needs and communicate technical concepts effectively across different audiences.
+          </p>
+        </article>
       </div>
+    </section>
 
+    <!-- Core Values Section -->
+    <section id="values"
+      style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));">
+      <h2 class="section-title reveal">What Drives Me</h2>
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
 
-      <div class="skill-row">
-        <img class="dsAlgo" src="images/DsAlgo.jpg" alt="DataStructures and Algorithm">
-        <h3>Data Structures and Algorithms</h3>
-        <p> Love to solve problems using various data structures like Array, Stack, Queue, Linked List, Hash Table, Tree and Graphs.
+          <article class="skill-card reveal" style="text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem;" aria-hidden="true">📚</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);">Continuous Learner
+            </h3>
+            <p style="color: var(--gray); line-height: 1.8;">
+              Always exploring new technologies, frameworks, and methodologies. From digital marketing to
+              data analytics to cutting-edge AI tools—my curiosity drives me to constantly expand my skill
+              set and stay ahead of industry trends.
+            </p>
+          </article>
+
+          <article class="skill-card reveal" style="text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem;" aria-hidden="true">🚀</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);">Initiative Taker</h3>
+            <p style="color: var(--gray); line-height: 1.8;">
+              I don't wait for opportunities—I create them. Whether it's proposing innovative solutions
+              like the design-to-code tool or leading organization-wide migrations, I take ownership and
+              drive projects from concept to completion.
+            </p>
+          </article>
+
+          <article class="skill-card reveal" style="text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem;" aria-hidden="true">🎯</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);">Completion Focused
+            </h3>
+            <p style="color: var(--gray); line-height: 1.8;">
+              Starting is easy, finishing is hard—but I'm committed to seeing every initiative through to
+              the end. From hackathons to enterprise migrations to blogging, I deliver results and ensure
+              successful implementation.
+            </p>
+          </article>
+
+          <article class="skill-card reveal" style="text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem;" aria-hidden="true">🤝</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);">Team Enabler</h3>
+            <p style="color: var(--gray); line-height: 1.8;">
+              Success is a team sport. Through mentorship, knowledge transfer, full-day demos, and
+              creating developer tools, I empower others to succeed. My goal is to elevate entire teams,
+              not just myself.
+            </p>
+          </article>
+
+          <article class="skill-card reveal" style="text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem;" aria-hidden="true">🔍</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);">Curious Explorer</h3>
+            <p style="color: var(--gray); line-height: 1.8;">
+              My diverse background—from digital marketing to data analytics to frontend
+              engineering—reflects my endless curiosity. I explore beyond my immediate domain to bring
+              fresh perspectives to technical challenges.
+            </p>
+          </article>
+
+          <article class="skill-card reveal" style="text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem;" aria-hidden="true">💡</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);">Innovation Champion
+            </h3>
+            <p style="color: var(--gray); line-height: 1.8;">
+              From winning the Design to Code Hackthon Contest to building AI-powered tools to leading
+              CI/CD transformations—I'm passionate about finding innovative solutions that create lasting
+              impact and push boundaries.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title reveal">Technical Expertise</h2>
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">⚛️</div>
+          <h3>Frontend Frameworks & Architecture</h3>
+          <p>Expert in building scalable React applications with microfrontend architecture, internal
+            framework development, and enterprise tooling.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">React 18</span>
+            <span class="tech-badge">Rendering and hydration technologies</span>
+            <span class="tech-badge">TypeScript</span>
+            <span class="tech-badge">Microfrontends</span>
+            <span class="tech-badge">Webpack</span>
+            <span class="tech-badge">Module Federation</span>
+            <span class="tech-badge">MERN Stack</span>
+            <span class="tech-badge">Angular 8+</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">🤖</div>
+          <h3>AI-Powered Developer Tools</h3>
+          <p>Building next-gen developer experiences with AI—from MCP development to automated design-to-code
+            conversion tools.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">MCP Development</span>
+            <span class="tech-badge">Claude API</span>
+            <span class="tech-badge">ChatGPT Integration</span>
+            <span class="tech-badge">Vibe Coder</span>
+            <span class="tech-badge">Figma-to-Code</span>
+            <span class="tech-badge">Design Automation</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">🚢</div>
+          <h3>DevOps & CI/CD</h3>
+          <p>Led enterprise-wide CI/CD migration and created automated starter projects for streamlined
+            developer workflows.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Jenkins to LOCI Migration</span>
+            <span class="tech-badge">Lowe's CI/CD</span>
+            <span class="tech-badge">Starter Projects</span>
+            <span class="tech-badge">Stash Automation</span>
+            <span class="tech-badge">Deployment Pipelines</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">🏗️</div>
+          <h3>Monorepo & Build Tools</h3>
+          <p>Specialized in NX monorepo architecture, migration strategies, and optimizing developer
+            experience at scale.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">NX Monorepo</span>
+            <span class="tech-badge">Lerna to NX Migration</span>
+            <span class="tech-badge">Yeoman</span>
+            <span class="tech-badge">Webpack Config</span>
+            <span class="tech-badge">Build Optimization</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">🔌</div>
+          <h3>Plugin & Adapter Architecture</h3>
+          <p>Designing extensible systems with adapter-based architecture and plugin frameworks for feature
+            distribution.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Plugin Architecture</span>
+            <span class="tech-badge">Adapter Pattern</span>
+            <span class="tech-badge">Feature Plugins</span>
+            <span class="tech-badge">Internal Frameworks</span>
+            <span class="tech-badge">Framework Analysis</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">🚀</div>
+          <h3>Backend & Server Frameworks</h3>
+          <p>Building robust Node.js APIs with multiple frameworks and integrating enterprise authentication
+            solutions.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">Express</span>
+            <span class="tech-badge">Fastify</span>
+            <span class="tech-badge">Hapi</span>
+            <span class="tech-badge">ForgeRock Auth</span>
+            <span class="tech-badge">MongoDB</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">🛡️</div>
+          <h3>Security & Architecture</h3>
+          <p>Strategic handling of security vulnerabilities and architectural design patterns that reduce
+            issues at scale.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Snyk Management</span>
+            <span class="tech-badge">Security Patterns</span>
+            <span class="tech-badge">Architecture Design</span>
+            <span class="tech-badge">Best Practices</span>
+            <span class="tech-badge">Clean Documentation</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">✍️</div>
+          <h3>Community & Mentorship</h3>
+          <p>Active technical blogger, mentor, and knowledge sharer helping developers grow through
+            comprehensive guides and KT sessions.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Technical Blogging</span>
+            <span class="tech-badge">Mentorship</span>
+            <span class="tech-badge">Knowledge Transfer</span>
+            <span class="tech-badge">Team Onboarding</span>
+            <span class="tech-badge">Full-Day Demos</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">🛠️</div>
+          <h3>Developer Tooling & Portals</h3>
+          <p>Creating developer portals, documentation systems, and supporting engineering teams with internal
+            tooling.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Backstage</span>
+            <span class="tech-badge">TechDocs</span>
+            <span class="tech-badge">Design Systems</span>
+            <span class="tech-badge">Framework Support</span>
+            <span class="tech-badge">BFCM Support</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon" aria-hidden="true">💾</div>
+          <h3>Full Stack Development</h3>
+          <p>Comprehensive full-stack experience including .NET development, Meta framework development and
+            legacy system migrations.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">.NET</span>
+            <span class="tech-badge">MSSQL</span>
+            <span class="tech-badge">EF Core</span>
+            <span class="tech-badge">REST APIs</span>
+            <span class="tech-badge">Silverlight Migration</span>
+            <span class="tech-badge">MERN Stack</span>
+            <span class="tech-badge">MEAN Stack</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements"
+      style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));">
+      <h2 class="section-title reveal">Key Achievements</h2>
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+
+          <article class="skill-card reveal"
+            style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1)); border: 2px solid var(--accent);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🏆</div>
+            <h3 style="color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem;">Design to Code
+              Hackathon Winner</h3>
+            <p style="font-size: 1.1rem;">Won Lowe's prestigious Design to Code Hackathon by proposing an
+              innovative solution to automate design-to-code conversion. Led the end-to-end development of
+              the tool that transforms Figma designs into production-ready React code. Delivered full-day
+              demos to engineers and business owners across teams, showcasing its impact on developer
+              velocity.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🚢</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Enterprise CI/CD Migration Leader</h3>
+            <p>Led organization-wide migration from Jenkins to LOCI (Lowe's CI/CD), modernizing deployment
+              infrastructure. Created comprehensive starter projects automating developer workflow from
+              Stash creation to deployment, dramatically reducing onboarding time and standardizing best
+              practices across engineering teams.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🥇</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Hackathon Champion & Innovator</h3>
+            <p>Won 1st place in company hackathon and secured 7th place in retail price-matching automation
+              challenge, developing a solution to reduce manual checkout time for store associates by
+              automating competitor price verification across multiple sources.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🤖</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">AI-Powered Developer Tools Pioneer</h3>
+            <p>Pioneered the development of an MCP (Model Context Protocol) for internal design systems and
+              built a Vibe Coder using Claude and ChatGPT APIs, bringing cutting-edge AI capabilities to
+              developer workflows and setting new standards for developer productivity tools.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">✍️</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Technical Blogger & Community Leader</h3>
+            <p>Actively contributing to the frontend community through comprehensive technical blogs,
+              sharing experience-driven guides on performance optimization and architecture patterns.
+              Published "The Complete Frontend Performance and Architecture Guide" helping developers
+              worldwide build better applications. <a
+                href="https://frontend-frameworks.hashnode.space/default-guide/the-complete-frontend-performance-and-architecture-guide"
+                target="_blank" rel="noopener noreferrer"
+                style="color: var(--primary); text-decoration: underline;">Read my blogs →</a></p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🎓</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Mentor & Knowledge Transfer Expert</h3>
+            <p>Successfully onboarded junior engineers, senior engineers, and team leads through
+              comprehensive knowledge transfer sessions. Delivered full-day demos on internal frameworks
+              and design-to-code tools to cross-functional teams, ensuring smooth integration and
+              empowering teams to leverage advanced tooling effectively.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">📚</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Enterprise Framework Architecture</h3>
+            <p>Successfully architected and migrated complex monorepo from Lerna to NX, designed
+              plugin-based adapter architectures, and implemented microfrontend patterns that now serve as
+              the foundation for multiple teams building scalable applications.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🛡️</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Security & Architecture Leadership</h3>
+            <p>Strategically resolved critical Snyk vulnerabilities by demonstrating and implementing
+              architectural improvements, reducing security issues by proposing different design patterns
+              and best practices that enhanced overall system security posture.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🔐</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Multi-Framework Authentication</h3>
+            <p>Integrated ForgeRock authentication seamlessly across three different Node.js server
+              frameworks (Express, Fastify, Hapi), creating a unified authentication strategy that works
+              consistently across diverse backend architectures.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🎨</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Diverse Background, Unique Perspective</h3>
+            <p>My journey from digital marketing and data analytics to frontend engineering brings a unique
+              perspective. Understanding user behavior, SEO, analytics, and ML algorithms enhances my
+              ability to build user-centric, data-driven applications and communicate effectively across
+              technical and non-technical audiences.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="background: var(--dark-light);">
+      <h2 class="section-title reveal">Professional Journey</h2>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-content">
+            <h3>Frontend Framework Engineer @ Lowe's</h3>
+            <p style="color: var(--primary); margin-bottom: 1rem;">Sep 2022 - Present</p>
+            <p><strong style="color: var(--accent);">🏆 Design to Code Hackathon Winner</strong> - Led and
+              developed an innovative design-to-code website tool that automatically converts Figma
+              designs to React code, revolutionizing developer productivity across the organization.</p>
+
+            <p style="margin-top: 1rem;"><strong style="color: var(--accent);">🚢 CI/CD Migration
+                Leader</strong> - Led organization-wide migration from Jenkins to LOCI (Lowe's CI/CD),
+              our internally created tool. Created comprehensive starter projects automating the entire
+              developer workflow from Stash creation to deployment.</p>
+
+            <p style="margin-top: 1rem;"><strong style="color: var(--accent);">🥇 Hackathon Winner</strong>
+              - Won 1st place in internal hackathon and secured 7th place in retail price-matching
+              automation challenge (team effort), solving checkout efficiency problems for store
+              associates.</p>
+
+            <p style="margin-top: 1rem;">Architecting enterprise-grade, internal React 18 frameworks using
+              an adapter- and plugin-based architecture. Building AI-powered developer tools including an
+              MCP for the internal design system and Design to Code tool. Delivered full-day demos to
+              engineers and business owners showcasing design-to-code tool and internal framework
+              capabilities. Successfully onboarded junior engineers, senior engineers, and team leads
+              through comprehensive knowledge transfer sessions. Actively contributing to the frontend
+              community through technical blogging and comprehensive guides. Integrated ForgeRock
+              authentication across multiple Node.js servers and strategically managed Snyk
+              vulnerabilities through architectural improvements.</p>
+            <div class="tech-stack" style="margin-top: 1rem;">
+              <span class="tech-badge">React 18</span>
+              <span class="tech-badge">NX Monorepo</span>
+              <span class="tech-badge">LOCI CI/CD</span>
+              <span class="tech-badge">MCP</span>
+              <span class="tech-badge">Claude API</span>
+              <span class="tech-badge">Figma-to-Code</span>
+              <span class="tech-badge">Microfrontends</span>
+              <span class="tech-badge">ForgeRock</span>
+              <span class="tech-badge">Mentorship</span>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-content">
+            <h3>Senior Software Engineer @ Infosys</h3>
+            <p style="color: var(--primary); margin-bottom: 1rem;">Oct 2020 - Sep 2022</p>
+            <p>Led the migration of legacy Silverlight applications to modern Angular 8 framework.
+              Collaborated with design teams to transform Figma designs into pixel-perfect, responsive
+              UIs. Developed scalable Angular components following best practices and established design
+              systems for consistent user experiences across the platform.</p>
+            <div class="tech-stack" style="margin-top: 1rem;">
+              <span class="tech-badge">Angular 8</span>
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">Silverlight Migration</span>
+              <span class="tech-badge">Figma to Code</span>
+              <span class="tech-badge">UI Development</span>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-content">
+            <h3>MERN Stack Training @ Newton School</h3>
+            <p style="color: var(--primary); margin-bottom: 1rem;">Intensive Bootcamp</p>
+            <p>Completed intensive full-stack web development training focused on the MERN stack (MongoDB,
+              Express.js, React, Node.js). Built multiple projects from scratch, mastering modern
+              JavaScript, RESTful API development, database design, and deployment strategies. This
+              foundation enabled my transition into professional frontend framework engineering.</p>
+            <div class="tech-stack" style="margin-top: 1rem;">
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">Express.js</span>
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Full Stack</span>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-content">
+            <h3>Software Engineering Intern @ Infosys</h3>
+            <p style="color: var(--primary); margin-bottom: 1rem;">Career Foundation</p>
+            <p>Gained comprehensive full-stack experience working with Angular for frontend development,
+              .NET for backend APIs, and MSSQL with Entity Framework Core for database operations. Built
+              foundational skills in modern web development, RESTful API design, and agile development
+              practices.</p>
+            <div class="tech-stack" style="margin-top: 1rem;">
+              <span class="tech-badge">Angular</span>
+              <span class="tech-badge">.NET</span>
+              <span class="tech-badge">MSSQL</span>
+              <span class="tech-badge">EF Core</span>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-content">
+            <h3>Marketing Intern @ Cognitive Edu</h3>
+            <p style="color: var(--primary); margin-bottom: 1rem;">Jan 2019 - Mar 2019</p>
+            <p>Demonstrated initiative by exceeding targets—added 12 friends to the learning community
+              (double the 6-person goal) and sold 18 courses worth ₹13,500. Developed skills in inside
+              sales, cross-functional team leadership, business strategy, and public speaking while
+              helping build the growing educational community.</p>
+            <div class="tech-stack" style="margin-top: 1rem;">
+              <span class="tech-badge">Inside Sales</span>
+              <span class="tech-badge">Team Leadership</span>
+              <span class="tech-badge">Business Strategy</span>
+              <span class="tech-badge">Public Speaking</span>
+              <span class="tech-badge">B2C</span>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-content">
+            <h3>Data Analyst Intern @ Takenmind Inc.</h3>
+            <p style="color: var(--primary); margin-bottom: 1rem;">Nov 2018 - Dec 2018</p>
+            <p>Performed data analytics and visualization using Python, working extensively with NumPy,
+              Pandas, and machine learning algorithms. Led an Employee Attrition Project, conducting
+              thorough research and documenting findings. This experience laid the groundwork for my
+              data-driven approach to engineering decisions.</p>
+            <div class="tech-stack" style="margin-top: 1rem;">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">NumPy</span>
+              <span class="tech-badge">Pandas</span>
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">Machine Learning</span>
+              <span class="tech-badge">Data Visualization</span>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-content">
+            <h3>Digital Marketing Intern @ Internshala</h3>
+            <p style="color: var(--primary); margin-bottom: 1rem;">Jun 2018 - Jul 2018</p>
+            <p>Learned and practiced comprehensive digital marketing techniques including web analytics,
+              email marketing, SEO, search/display/video/mobile marketing, and social media marketing.
+              This diverse skill set enhances my ability to understand user behavior and optimize frontend
+              experiences for better engagement.</p>
+            <div class="tech-stack" style="margin-top: 1rem;">
+              <span class="tech-badge">SEO</span>
+              <span class="tech-badge">Web Analytics</span>
+              <span class="tech-badge">Email Marketing</span>
+              <span class="tech-badge">Social Media</span>
+              <span class="tech-badge">Mobile Marketing</span>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Community Contributions Section -->
+    <section id="community" style="background: var(--dark-light);">
+      <h2 class="section-title reveal">Community Contributions</h2>
+      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <div class="reveal" style="margin-bottom: 3rem;">
+          <div style="font-size: 4rem; margin-bottom: 1.5rem;" aria-hidden="true">✍️</div>
+          <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--white);">Technical Blogging &
+            Knowledge Sharing</h3>
+          <p style="font-size: 1.2rem; color: var(--gray); line-height: 1.8; margin-bottom: 2rem;">
+            I'm passionate about giving back to the frontend community through comprehensive technical
+            blogs. Sharing real-world experience, learnings, and best practices to help developers build
+            better applications.
+          </p>
+        </div>
+
+        <article class="skill-card reveal" style="text-align: left; max-width: 800px; margin: 0 auto 2rem;">
+          <div style="display: flex; align-items: start; gap: 2rem;">
+            <div style="font-size: 3rem; flex-shrink: 0;" aria-hidden="true">📚</div>
+            <div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);">The Complete
+                Frontend Performance and Architecture Guide</h3>
+              <p style="color: var(--gray); margin-bottom: 1.5rem; line-height: 1.8;">
+                A comprehensive guide covering performance optimization techniques, architectural
+                patterns, best practices, and real-world insights from building enterprise-scale
+                applications. This guide serves as a complete reference for frontend engineers looking
+                to level up their skills.
+              </p>
+              <a href="https://frontend-frameworks.hashnode.space/default-guide/the-complete-frontend-performance-and-architecture-guide"
+                target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-block;">
+                Read My Blog Series →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+          <div class="reveal" style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;" aria-hidden="true">🎯</div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--white);">Experience-Driven
+            </h4>
+            <p style="color: var(--gray);">Real-world insights from building enterprise applications</p>
+          </div>
+          <div class="reveal" style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;" aria-hidden="true">⚡</div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--white);">Performance Focused
+            </h4>
+            <p style="color: var(--gray);">Practical optimization techniques that deliver results</p>
+          </div>
+          <div class="reveal" style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;" aria-hidden="true">🏗️</div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--white);">Architecture Patterns
+            </h4>
+            <p style="color: var(--gray);">Scalable solutions for modern web applications</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="section-title reveal">Let's Connect</h2>
+      <div class="contact-content reveal">
+        <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem;">
+          I'm always excited to collaborate on interesting projects or discuss new opportunities. Feel free to
+          reach out through any of these platforms!
         </p>
+        <a href="mailto:msaravanan1998@gmail.com" class="btn btn-primary">Send Me an Email</a>
 
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/saravanan-m/" target="_blank" rel="noopener noreferrer"
+            class="social-link" aria-label="LinkedIn Profile">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+            </svg>
+          </a>
+          <a href="https://github.com/kikako-saravanan" target="_blank" rel="noopener noreferrer" class="social-link"
+            aria-label="GitHub Profile">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+            </svg>
+          </a>
+          <a href="https://mobile.twitter.com/kikako_saro" target="_blank" rel="noopener noreferrer" class="social-link"
+            aria-label="Twitter Profile">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17A4.86 4.86 0 0 0 15.2 4c-2.7 0-4.89 2.19-4.89 4.89 0 .38.04.75.13 1.1-4.06-.2-7.67-2.15-10.08-5.1a4.87 4.87 0 0 0 1.51 6.53 4.84 4.84 0 0 1-2.21-.61v.06c0 2.37 1.69 4.35 3.93 4.8a4.89 4.89 0 0 1-2.21.08 4.89 4.89 0 0 0 4.57 3.39A9.78 9.78 0 0 1 1 20.55 13.8 13.8 0 0 0 8.29 23c8.87 0 13.72-7.35 13.72-13.72l-.02-.63A9.72 9.72 0 0 0 24.46 6z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/kikako_saravanan/" target="_blank" rel="noopener noreferrer"
+            class="social-link" aria-label="Instagram Profile">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+            </svg>
+          </a>
+        </div>
       </div>
+    </section>
+  </main>
 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Saravanan Mohan. Crafted with passion and precision.</p>
+  </footer>
 
-      <div class="skill-row">
-        <img class="cloud" src="images/cloud.jpg" alt="Cloud Computing">
-        <h3>Cloud Computing</h3>
-        <p> I am Cloud Enabled and have knoweldge on GCP and Azure cloud.
-        </p>
-
-      </div>
-
-      <div class="skill-row">
-        <img class="img" src="images\rainy-night-alex-pasquarella_4x.png" alt="skill">
-        <h3>Data Analytics and Visualization</h3>
-        <p>I can able to Gather, Clean, Analyse and visualize Data Sets from various sources and build a model(ML model) to predict the result.I use python as a programming language for
-          Data Analytics.Worked with Numpy, pandas, scikit.</p>
-
-      </div>
-
-
-
-
-
-    </div>
-    <hr>
-    <div class="contact-me">
-      <h2>Get In Touch</h2>
-      <a class="butn" href="mailto:msaravanan1998@gmail.com" target="_blank" rel="noopener noreferrer">Contact Me</a>
-    </div>
-  </div>
-
-
-  <div class="bottom-container">
-    <a class="fa fa-linkedin" aria-hidden="true" href="https://www.linkedin.com/in/saravanan-m/" target="_blank" rel="noopener noreferrer"></a>
-    <a class="fa fa-twitter" aria-hidden="true" href="https://mobile.twitter.com/kikako_saro" target="_blank" rel="noopener noreferrer"></a>
-    <a class="fa fa-github" aria-hidden="true" href="https://github.com/kikako-saravanan" target="_blank" rel="noopener noreferrer"></a>
-    <a class="fa fa-instagram" aria-hidden="true" href="https://www.instagram.com/kikako_saravanan/" target="_blank" rel="noopener noreferrer"></a>
-    <a  aria-hidden="true" href="https://kikako-saravanan.github.io/SaravananMohan/index.html" target="_blank" rel="noopener noreferrer">S</a>
-    <a  aria-hidden="true" href="https://kikako-saravanan.github.io/SaravananResume/resume.html" target="_blank" rel="noopener noreferrer">R</a>
-    
-
-    <p class="copyright">© 2022 Saravanan Mohan</p>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-  <script>
-    const options = {
-  bottom: "32px", // default: '32px'
-  right: "32px", // default: '32px'
-  left: "unset", // default: 'unset'
-  time: "0.5s", // default: '0.3s'
-  mixColor: "#fff", // default: '#fff'
-  backgroundColor: "#fff", // default: '#fff'
-  buttonColorDark: "#100f2c", // default: '#100f2c'
-  buttonColorLight: "#fff", // default: '#fff'
-  saveInCookies: true, // default: true,
-  label: "🌓", // default: ''
-  autoMatchOsTheme: true, // default: true
-};
-const darkmode = new Darkmode(options);
-darkmode.showWidget();
-
-  </script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
