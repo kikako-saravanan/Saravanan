@@ -84,6 +84,38 @@
   <div class="cursor"></div>
   <div class="cursor-follower"></div>
 
+  <!-- Resume/CV Modal -->
+  <div id="resumeModal" class="resume-modal" role="dialog" aria-labelledby="resumeModalTitle" aria-modal="true">
+    <div class="resume-modal-content">
+      <div class="resume-modal-header">
+        <h3 id="resumeModalTitle">My Resume</h3>
+        <div class="resume-modal-actions">
+          <button id="downloadResumeBtn" class="resume-btn resume-btn-download" aria-label="Download resume">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
+            </svg>
+            Download
+          </button>
+          <button id="closeResumeModal" class="resume-btn resume-btn-close" aria-label="Close modal">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </svg>
+            Close
+          </button>
+        </div>
+      </div>
+      <div class="resume-modal-body">
+        <div class="resume-viewer-container" id="resumeViewerContainer">
+          <div class="resume-loading">
+            <div class="resume-loading-spinner"></div>
+            <p>Loading document...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Skip to main content for accessibility -->
   <a href="#main-content" style="position: absolute; left: -9999px;">Skip to main content</a>
 
@@ -98,6 +130,8 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#community">Community</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#" onclick="openResumeModal('resume')">Resume</a></li>
+      <li><a href="#" onclick="openResumeModal('cv')">CV</a></li>
     </ul>
     <div class="menu-toggle" role="button" aria-label="Toggle menu">
       <span></span>
@@ -129,6 +163,7 @@
       </div>
     </section>
 
+
     <!-- About Section -->
     <section id="about">
       <h2 class="section-title reveal">About Me</h2>
@@ -149,7 +184,7 @@
           </p>
           <p>
             I'm pioneering AI-enhanced developer experiences by building an MCP (Model Context Protocol) for
-            our internal design system and developing a Vibe Coder using Claude and ChatGPT. As the winner
+            our internal design system and developing a Price Matching Website using Claude and ChatGPT. As the winner
             of design-to-code hackathon, I led the development of an innovative design-to-code tool that
             automatically converts Figma designs to React code—revolutionizing how developers and engineers
             build UIs across the company. I've also presented full-day demos to engineers and business
@@ -280,7 +315,7 @@
             <span class="tech-badge">MCP Development</span>
             <span class="tech-badge">Claude API</span>
             <span class="tech-badge">ChatGPT Integration</span>
-            <span class="tech-badge">Vibe Coder</span>
+            <span class="tech-badge">Price Matching Website</span>
             <span class="tech-badge">Figma-to-Code</span>
             <span class="tech-badge">Design Automation</span>
           </div>
@@ -443,7 +478,7 @@
             <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🤖</div>
             <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">AI-Powered Developer Tools Pioneer</h3>
             <p>Pioneered the development of an MCP (Model Context Protocol) for internal design systems and
-              built a Vibe Coder using Claude and ChatGPT APIs, bringing cutting-edge AI capabilities to
+              built a Price Matching Website using Claude and ChatGPT APIs, bringing cutting-edge AI capabilities to
               developer workflows and setting new standards for developer productivity tools.</p>
           </article>
 
