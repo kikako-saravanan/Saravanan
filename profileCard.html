@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saravanan M - Interactive Profile Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            perspective: 1000px;
+            position: relative;
+            width: 400px;
+            height: 550px;
+        }
+
+        /* Info button on card front */
+        .info-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 35px;
+            height: 35px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 18px;
+            color: #667eea;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .info-button:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .info-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Info modal */
+        .info-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            animation: fadeInModal 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes fadeInModal {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .info-modal.active {
+            display: flex;
+        }
+
+        .info-content {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            animation: scaleIn 0.3s ease;
+            position: relative;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .info-content h3 {
+            color: #667eea;
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            padding: 12px 15px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            border-radius: 12px;
+            border-left: 3px solid #667eea;
+        }
+
+        .info-item-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .info-item-desc {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background: rgba(102, 126, 234, 0.1);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #667eea;
+            font-size: 20px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .close-modal:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .profile-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .profile-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            pointer-events: auto;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: rotateY(180deg);
+            padding: 30px;
+            color: white;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .avatar-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 5px;
+            margin-bottom: 20px;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: #667eea;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .click-hint {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 13px;
+            color: #999;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .content-section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .content-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .content-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Particle Effect */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) translateX(50px);
+            }
+        }
+
+        /* Glowing orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.3;
+            pointer-events: none;
+            animation: orbFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(30px, 30px) scale(1.2);
+            }
+        }
+
+        .orb1 {
+            width: 200px;
+            height: 200px;
+            background: #667eea;
+            top: -50px;
+            left: -50px;
+            animation-delay: 0s;
+        }
+
+        .orb2 {
+            width: 150px;
+            height: 150px;
+            background: #764ba2;
+            bottom: -30px;
+            right: -30px;
+            animation-delay: 2s;
+        }
+
+        /* Ripple effect on click */
+        .ripple {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid rgba(102, 126, 234, 0.5);
+            animation: rippleAnimation 1.5s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes rippleAnimation {
+            0% {
+                width: 20px;
+                height: 20px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+
+        .profile-card:active {
+            transform: scale(0.98);
+        }
+
+        .profile-card.flipped:active {
+            transform: rotateY(180deg) scale(0.98);
+        }
+
+        .profile-card:not(.flipped) .card-back {
+            pointer-events: none;
+        }
+
+        .profile-card.flipped .card-front {
+            pointer-events: none;
+        }
+
+        .profile-card:not(.flipped) .card-front,
+        .profile-card.flipped .card-back {
+            pointer-events: auto;
+        }
+
+        /* Loading animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .profile-card {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Social links on front */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        /* Achievement badges */
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .badge {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .section-counter {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+            font-size: 13px;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            font-size: 20px;
+            color: white;
+            z-index: 10;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                width: 340px;
+                height: 480px;
+            }
+
+            .profile-card {
+                width: 340px;
+                height: 480px;
+            }
+
+            .avatar-container {
+                width: 150px;
+                height: 150px;
+            }
+
+            .name {
+                font-size: 24px;
+            }
+
+            .title {
+                font-size: 14px;
+            }
+
+            .stats {
+                gap: 15px;
+            }
+
+            .stat-value {
+                font-size: 20px;
+            }
+
+            .info-content {
+                padding: 25px;
+            }
+
+            .info-content h3 {
+                font-size: 20px;
+            }
+        }
+
+        /* Custom scrollbar for back card */
+        .card-back::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .card-back::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .card-back::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .card-back::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Info Modal -->
+    <div class="info-modal" id="infoModal">
+        <div class="info-content">
+            <button class="close-modal" id="closeModal">×</button>
+            <h3>ℹ️ How to Navigate</h3>
+
+            <div class="info-item">
+                <div class="info-item-title">👆 Click the Card</div>
+                <div class="info-item-desc">Click anywhere on the card to flip it and reveal content sections</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-item-title">🔄 Cycle Through Sections</div>
+                <div class="info-item-desc">Keep clicking to explore: Strengths → Growth Areas → Key Wins → Values</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-item-title">← Back Button</div>
+                <div class="info-item-desc">Click the ← button (top-right on back) to return to the front of the card
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-item-title">⌨️ Keyboard Shortcuts</div>
+                <div class="info-item-desc">Space/→ to flip/next | ESC/← to go back</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-item-title">📱 Mobile</div>
+                <div class="info-item-desc">Tap to flip and cycle • Swipe also works!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="profile-card" id="profileCard">
+            <!-- Front Face -->
+            <div class="card-face card-front">
+                <div class="orb orb1"></div>
+                <div class="orb orb2"></div>
+
+                <!-- Info Button -->
+                <div class="info-button" id="infoButton" title="How to navigate">ℹ</div>
+
+                <div class="avatar-container">
+                    <div class="avatar" id="avatarContent">
+                        <img src="images/saravanan.png" alt="Saravanan Mohan">
+                    </div>
+                </div>
+
+                <h2 class="name">Saravanan Mohan</h2>
+                <p class="title">Frontend Framework Engineer</p>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-value">4+</div>
+                        <div class="stat-label">Years Exp</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">Teams Served</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">15+</div>
+                        <div class="stat-label">Mentored</div>
+                    </div>
+                </div>
+
+                <div class="badges">
+                    <div class="badge">🏆 Hackathon Winner</div>
+                    <div class="badge">🤖 AI Pioneer</div>
+                    <div class="badge">📚 Blogger</div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/saravanan-m" target="_blank" class="social-link" title="LinkedIn">
+                        <span>in</span>
+                    </a>
+                    <a href="https://github.com/kikako-saravanan" target="_blank" class="social-link" title="GitHub">
+                        <span>⚡</span>
+                    </a>
+                    <a href="mailto:msaravanan1998@gmail.com" class="social-link" title="Email">
+                        <span>✉</span>
+                    </a>
+                    <a href="https://frontend-frameworks.hashnode.space" target="_blank" class="social-link"
+                        title="Blog">
+                        <span>✍</span>
+                    </a>
+                </div>
+
+                <div class="click-hint">✨ Click to reveal more ✨</div>
+            </div>
+
+            <!-- Back Face -->
+            <div class="card-face card-back">
+                <!-- Back button to flip to front -->
+                <div class="back-button" id="backButton" title="Back to front">←</div>
+                <!-- Content container -->
+                <div id="cardBackContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data for different sections
+        const profileData = {
+            strengths: {
+                title: "💪 Core Strengths",
+                icon: "🎯",
+                items: [
+                    {
+                        title: "Initiative Taker",
+                        description: "Won Design to Code Hackathon, led CI/CD migration affecting 100+ teams. Don't wait for opportunities—create them."
+                    },
+                    {
+                        title: "Rapid Learner",
+                        description: "Completed MERN bootcamp while working. Early adopter of AI tools (Claude, ChatGPT) for developer productivity."
+                    },
+                    {
+                        title: "Scale & Impact Builder",
+                        description: "Architect frameworks serving 50+ teams. Reduced onboarding from 2 weeks to 2 days. Think in multiplier effects."
+                    },
+                    {
+                        title: "Team Enabler",
+                        description: "Mentored 15+ engineers. Created comprehensive docs and tools. Technical blogger helping 1000+ developers."
+                    }
+                ]
+            },
+            weaknesses: {
+                title: "🎓 Growth Areas",
+                icon: "📈",
+                items: [
+                    {
+                        title: "Over-Engineering (Working On It)",
+                        description: "Tendency to build for all scenarios upfront. Now following MVP approach: start simple, iterate based on feedback."
+                    },
+                    {
+                        title: "Technical Deep-Dives",
+                        description: "Can get too detailed in explanations. Learning to tailor communication: business value for stakeholders, tech depth for engineers."
+                    },
+                    {
+                        title: "Impatient with Slow Process",
+                        description: "Want to move fast when solution is clear. Learning that org change needs consensus and phased rollouts."
+                    }
+                ]
+            },
+            achievements: {
+                title: "🏆 Key Wins",
+                icon: "⭐",
+                items: [
+                    {
+                        title: "Design to Code Hackathon Winner",
+                        description: "Built tool converting Figma to React—60% faster UI development. Now used across teams."
+                    },
+                    {
+                        title: "CI/CD Migration Leader",
+                        description: "Led Jenkins to LOCI migration for 100+ teams. 40% faster deployments, 99.5% reliability."
+                    },
+                    {
+                        title: "AI Tools Pioneer",
+                        description: "Built MCP for design system, Vibe Coder with Claude/ChatGPT. 45% productivity gain."
+                    },
+                    {
+                        title: "Framework Architect",
+                        description: "Designed adapter + plugin-based React 18 framework serving 50+ teams. NX migration improved builds 70%."
+                    }
+                ]
+            },
+            values: {
+                title: "🌟 What Drives Me",
+                icon: "💡",
+                items: [
+                    {
+                        title: "Continuous Learner",
+                        description: "Always exploring new tech. From marketing to data to AI tools—curiosity drives growth."
+                    },
+                    {
+                        title: "Completion Focused",
+                        description: "Start is easy, finish is hard. I ship—not just prototype. Measure success in results."
+                    },
+                    {
+                        title: "Cross-Functional Thinker",
+                        description: "Unique background: marketing→data→engineering. Understand users, metrics, and code."
+                    },
+                    {
+                        title: "Innovation Champion",
+                        description: "Push boundaries. Find new solutions to old problems. Build the future, don't wait for it."
+                    }
+                ]
+            }
+        };
+
+        // Current state
+        let isFlipped = false;
+        const sections = ['strengths', 'weaknesses', 'achievements', 'values'];
+        let currentSectionIndex = 0;
+        let currentSection = sections[0];
+
+        // Elements
+        const profileCard = document.getElementById('profileCard');
+        const cardBackContent = document.getElementById('cardBackContent');
+        const backButton = document.getElementById('backButton');
+        const infoButton = document.getElementById('infoButton');
+        const infoModal = document.getElementById('infoModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Initialize
+        updateBackContent(currentSection);
+        createParticles();
+
+        // Info button handler
+        infoButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent card click
+            infoModal.classList.add('active');
+        });
+
+        // Close modal handlers
+        closeModal.addEventListener('click', () => {
+            infoModal.classList.remove('active');
+        });
+
+        infoModal.addEventListener('click', (e) => {
+            if (e.target === infoModal) {
+                infoModal.classList.remove('active');
+            }
+        });
+
+        // Back button click handler
+        backButton.addEventListener('click', (e) => {
+            e.stopImmediatePropagation(); // Prevent card click event
+            flipBack();
+        });
+
+        // Click handler
+        profileCard.addEventListener('click', (e) => {
+            // Don't flip if clicking on social links or info button
+            if (e.target.closest('.social-link') || e.target.closest('.info-button')) {
+                return;
+            }
+
+            if (!isFlipped) {
+                // First click - flip the card
+                flipCard();
+            } else {
+                // Subsequent clicks - cycle through sections
+                nextSection();
+            }
+
+            // Create ripple effect
+            createRipple(e);
+        });
+
+        // Functions
+        function flipCard() {
+            isFlipped = true;
+            profileCard.classList.add('flipped');
+        }
+
+        function flipBack() {
+            // ensure modal is closed when returning
+            if (infoModal.classList.contains('active')) {
+                infoModal.classList.remove('active');
+            }
+
+            isFlipped = false;
+            profileCard.classList.remove('flipped');
+
+            // reset section index/state if you want the back face to start at first section
+            currentSectionIndex = 0;
+            currentSection = sections[0];
+            updateBackContent(currentSection);
+        }
+
+
+        function nextSection() {
+            currentSectionIndex = (currentSectionIndex + 1) % sections.length;
+            currentSection = sections[currentSectionIndex];
+            updateBackContent(currentSection);
+        }
+
+        function updateBackContent(section) {
+            const data = profileData[section];
+            let html = `
+                <div class="content-section">
+                    <h3 class="section-title">
+                        <span class="section-icon">${data.icon}</span>
+                        ${data.title}
+                    </h3>
+            `;
+
+            data.items.forEach(item => {
+                html += `
+                    <div class="content-item">
+                        <div class="item-title">${item.title}</div>
+                        <div class="item-description">${item.description}</div>
+                    </div>
+                `;
+            });
+
+            html += `
+                </div>
+                <div class="section-counter">
+                    Section ${currentSectionIndex + 1} of ${sections.length} • Click for next
+                </div>
+            `;
+
+            cardBackContent.innerHTML = html;
+        }
+
+        function createRipple(e) {
+            const rect = profileCard.getBoundingClientRect();
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple');
+            ripple.style.left = (e.clientX - rect.left - 10) + 'px';
+            ripple.style.top = (e.clientY - rect.top - 10) + 'px';
+            profileCard.appendChild(ripple);
+
+            setTimeout(() => ripple.remove(), 1500);
+        }
+
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    particle.style.left = Math.random() * window.innerWidth + 'px';
+                    particle.style.top = window.innerHeight + 'px';
+                    particle.style.animationDelay = Math.random() * 2 + 's';
+
+                    particlesContainer.appendChild(particle);
+
+                    setTimeout(() => particle.remove(), 3000);
+                }
+            }, 300);
+        }
+
+        // Keyboard shortcuts (only for card navigation, not modal)
+        document.addEventListener('keydown', (e) => {
+            // If modal is open, only handle ESC to close it
+            if (infoModal.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    infoModal.classList.remove('active');
+                }
+                return;
+            }
+
+            // Card navigation shortcuts
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                if (!isFlipped) {
+                    flipCard();
+                } else {
+                    nextSection();
+                }
+            } else if (e.key === 'ArrowLeft' || e.key === 'Escape') {
+                e.preventDefault();
+                flipBack();
+            }
+        });
+
+        // Touch support for mobile
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        profileCard.addEventListener('touchstart', (e) => {
+            // Don't handle touch on social links or info button
+            if (e.target.closest('.social-link') || e.target.closest('.info-button')) {
+                return;
+            }
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        });
+
+        profileCard.addEventListener('touchend', (e) => {
+            // Don't handle touch on social links or info button
+            if (e.target.closest('.social-link') || e.target.closest('.info-button')) {
+                return;
+            }
+
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
+
+            const diffX = touchStartX - touchEndX;
+            const diffY = touchStartY - touchEndY;
+
+            // Tap or swipe detection
+            if (Math.abs(diffX) < 10 && Math.abs(diffY) < 10) {
+                // It's a tap
+                if (!isFlipped) {
+                    flipCard();
+                } else {
+                    nextSection();
+                }
+            } else if (Math.abs(diffX) > 50 || Math.abs(diffY) > 50) {
+                // It's a swipe
+                if (!isFlipped) {
+                    flipCard();
+                } else {
+                    nextSection();
+                }
+            }
+        });
+
+        // stop bubbling for frequently clickable controls
+        document.querySelectorAll('.info-button, .back-button, .social-link').forEach(el => {
+            el.addEventListener('click', e => {
+                e.stopImmediatePropagation();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
